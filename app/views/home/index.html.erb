@@ -1,0 +1,45 @@
+
+		<div id="contentHome">
+            
+            <div id="banner">
+                <a href="javascript:;"><%=image_tag("home/banner.jpg")%></a>
+            </div>
+            
+            
+            <div id="boxComunidades">
+                <label class="title">Fa&ccedil;a parte de nossa comunidade</label>
+                <br />
+                Receba as &uacute;ltimas novidades, eventos, promo&ccedil;&otilde;es e servi&ccedil;os.
+                <div class="links">
+                    <a href="javascript:;"><%=image_tag("home/bt_twitter.gif")%></a>
+                    <a href="javascript:;"><%=image_tag("home/bt_facebook.gif")%></a>
+                    <a href="javascript:;"><%=image_tag("home/bt_blogger.gif")%></a>
+                </div>
+            </div>
+            
+            
+            <div id="boxCadastro">
+                <label class="title">Seja um cliente Points For Fun</label>
+                <p>Confira as vantagens promocionais, servi&ccedil;os e muito mais.</p>
+                <div class="botao">
+										<a href="users/sign_up/"><%=image_tag("home/bt_cadastre.gif", :id => "btCadastro")%></a>
+                </div>
+            </div>
+            
+            
+            <div id="boxAcesso">
+								<%=image_tag("home/ico_cadeado.gif", :class => "boxImage")%>
+                <label class="title">Acesse sua conta</label>
+								<%= form_for("user", :url => user_session_path, :html => {:name => "form1"}) do |f| %>
+										<label class="lblInput">E-Mail:</label>
+										<img src="images/home/input_left.gif" class="imgInput" /><%= f.text_field :email %><img src="images/home/input_right.gif" class="imgInput" />
+										<label class="lblInput">Senha:</label>
+										<img src="images/home/input_left.gif" class="imgInput" /><%= f.password_field :password %><img src="images/home/input_right.gif" class="imgInput" />
+										<br>
+														<%=image_tag("home/blt_seta.gif")%><a href="javascript:;" id="lnkEsqueceuSenha">Esqueceu sua senha?</a>
+												     <a href="javascript:document.form1.submit();" id="btAcessar"><%=image_tag("home/bt_acessar.gif", :name => "commit", :id => "user_submit")%></a>
+								<% end %>  
+            </div>
+        
+    	</div><!-- contentHome -->
+        

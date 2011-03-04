@@ -1,0 +1,71 @@
+<%= form_tag({:controller => "cart", :action => "update"}, :name => "form1") do %>
+<div id="container">
+	<div class="box">
+        <h1>My Cart</h1>
+			<table class="tableGrid">
+				<thead>
+						<th class="alignLeft">Name</th>
+						<th>Points</th>
+						<th>Value</th>
+						<th class="alignCenter">Quantity</th>
+						<th>Total</th>
+						<th class="lastColl"></th>
+				</thead>
+				<tbody>
+				<%#@total.each do |sum|%>
+					<!--tr><td colspan="5"><%#=Point.find(sum[0]).name%></td></tr-->
+					<% count = 0
+                       @cart.each do |items| %>
+						<%#if items.product.points_id == sum[0]%>
+							<tr class="<%= (count%2==0)?:lineOn : :lineOff%>">
+								<%= hidden_field :products,:product_id, :value => items.product.id, :index => items.id %>
+								<td><%=items.product.name%></td>
+								<td class="alignCenter"><%=items.product.points_value%></td>
+								<td class="alignRight"><%=items.product.currency_value%></td>
+								<td class="alignCenter">
+										<%=text_field :products, :quantity, :size=> 2, :value => items.quantity, :index =>items.id, :class => "alignCenter"%>
+								</td>
+								<td class="alignRight"><%=items.product.currency_value * items.quantity %></td>
+								<td class="alignCenter"><%= link_to image_tag("/images/icons/remove.png", :title => "remove item"), "/cart/remove/#{items.id}"%></td>
+							</tr>
+						<%#end%>
+					<% count +=1
+                       end%>
+					<!--tr><td colspan="2"></td><td  colspan="3">Total = <%#=sum[1]%> </td></tr-->
+				<%#end%>
+				</tbody>
+            </table>
+            <br/>
+            <table class="tableGrid">
+                <thead>
+                    <th class="alignLeft">Points</th>
+                    <th style="text-align:center">Currency</th>
+                    <th>Quotation</th>
+                    <th style="text-align:right">Total R$</th>
+                    <th></th>
+                </thead>
+				<tbody>
+
+					<%@totals[:items].each do |item|%>
+					<tr>
+						<td class="alignLeft"><%=item[1][:pointName]%> : <%=item[1][:subTotalPoints]%></td>
+						<td style="text-align:right"><%=item[1][:currencyName]%> : <%=item[1][:subTotalPoints]%></td>
+						<td style="text-align:center"><%=item[1][:quotation]%></td>
+						<td style="text-align:right"><%=item[1][:subtotalReal]%> </td>
+						<td></td>
+					</tr>
+					<%end%>
+					<tr><td colspan="4" style="text-align:right"><%=@totals[:geral]%></td></tr>
+				</tbody>
+			</table>
+
+    <div class="formButtons">
+        <button class="icon back" onclick='document.form1.action="/shopping"'>Back to Shopping</button>
+        <button class="icon cancel"  onclick='document.form1.action="/cart/remove_all"'>Clean Shopping Cart</button>
+        <button class="icon update" onclick="document.form1.action='/cart/update'">Update Cart</button>
+        <button class="icon confirm" id="checkout_submit" onclick="document.form1.action='/cart/checkout'">Checkout</button>
+    </div>
+	</div>
+
+</div>
+<% end %>

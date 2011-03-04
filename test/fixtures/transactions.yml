@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  date: 2011-03-03 12:51:39
+  account_id: 1
+  transaction_type_code: 1
+  points_value: 9.99
+  account_from_id: 1
+
+two:
+  date: 2011-03-03 12:51:39
+  account_id: 1
+  transaction_type_code: 1
+  points_value: 9.99
+  account_from_id: 1

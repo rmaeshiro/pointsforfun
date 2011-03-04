@@ -1,0 +1,35 @@
+			<div id="submenu" class="box">
+				<ul>
+					<li><a href="/home">Home</a></li>
+					<li><a href="/users/sign_in">Sign In</a></li>
+					<li><a href="/users/password/new" >Forgot your password?</a></li>
+				</ul>
+			</div><!--end submenu-->
+			<div id="container">
+				<div class="box">
+					<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+					<%= devise_error_messages! %>
+					<!--p>
+						Forne&ccedil;a as seguintes informa&ccedil;&otilde;es para criar sua conta gratu&iacute;ta.<br />
+						Suas informa&ccedil;&otilde;es pessoais sempre s&atilde;o protegidas por nossa Pol&iacute;tica de Privacidade.
+					</p-->
+					<h1>Sign Up</h1>
+					<table>
+						<tr>
+							<td><%= f.label :email %></td>
+							<td><%= f.text_field :email %></td>
+						</tr>
+						<tr>
+							<td><%= f.label :password %></td>
+							<td><%= f.password_field :password %></td>
+						</tr>
+						<tr>
+							<td><%= f.label :password_confirmation %></td>
+							<td><%= f.password_field :password_confirmation %></td>
+						</tr>
+					</table>
+					<br/>
+					<%= f.submit "Sign up" %>
+				<% end %>
+				</div>
+			</div>

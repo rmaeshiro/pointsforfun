@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Order:</b>
+  <%= @order_log.order_id %>
+</p>
+
+<p>
+  <b>Order status:</b>
+  <%= @order_log.order_status_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_order_log_path(@order_log) %> |
+<%= link_to 'Back', order_logs_path %>

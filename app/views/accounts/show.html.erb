@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @account.user_id %>
+</p>
+
+<p>
+  <b>Card number:</b>
+  <%= @account.card_number %>
+</p>
+
+<p>
+  <b>Date valid:</b>
+  <%= @account.date_valid %>
+</p>
+
+<p>
+  <b>Cvv:</b>
+  <%= @account.cvv %>
+</p>
+
+<p>
+  <b>Balance:</b>
+  <%= @account.balance %>
+</p>
+
+<p>
+  <b>Points:</b>
+  <%= @account.point_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_account_path(@account) %> |
+<%= link_to 'Back', accounts_path %>

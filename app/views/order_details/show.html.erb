@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Order:</b>
+  <%= @order_detail.order_id %>
+</p>
+
+<p>
+  <b>Product:</b>
+  <%= @order_detail.product_id %>
+</p>
+
+<p>
+  <b>Point:</b>
+  <%= @order_detail.point_id %>
+</p>
+
+<p>
+  <b>Point value:</b>
+  <%= @order_detail.point_value %>
+</p>
+
+<p>
+  <b>Quantity:</b>
+  <%= @order_detail.quantity %>
+</p>
+
+<p>
+  <b>Currency value:</b>
+  <%= @order_detail.currency_value %>
+</p>
+
+<p>
+  <b>Quotation:</b>
+  <%= @order_detail.quotation %>
+</p>
+
+
+<%= link_to 'Edit', edit_order_detail_path(@order_detail) %> |
+<%= link_to 'Back', order_details_path %>

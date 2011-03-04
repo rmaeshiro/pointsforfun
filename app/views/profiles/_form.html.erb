@@ -1,0 +1,86 @@
+<%= form_for(@profile) do |f| %>
+  <% if @profile.errors.any? %>
+    <div id="error_explanation" class="boxValidation">
+      <h2>Existem <%= pluralize(@profile.errors.count, "error") %> que impedem você de continuar:</h2>
+
+      <ul>
+      <% @profile.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+	<h2>&raquo; Personal data </h2>
+	<table style="width:100%">
+		<tr>
+			<td style="width:17%"><%= f.label :first_name %></td>
+			<td style="width:40%"><%= f.text_field :first_name, :size => "35"%></td>
+			<td><%= f.label :last_name %></td>
+			<td><%= f.text_field :last_name, :size => "35" %></td>
+		</tr>
+		<tr>
+			<td><%= f.label :date_of_birth %></td>
+			<td><%= f.date_select :date_of_birth, :start_year => 1940%></td>
+			<td><%= f.label :sex_id %></td>
+			<td><%= f.select(:sex_id ,[['Male', 1], ['Female', 2]]) %></td>
+		</tr>
+	</table>
+
+	<h2>&raquo; Documents</h2>
+
+	<table style="width:100%">
+		<tr>
+			<td style="width:17%"><%= f.label :CPF, "CPF" %></td>
+			<td style="width:40%"><%= f.text_field :CPF, :size => "30" %></td>
+			<td><%= f.label :RG, "RG" %></td>
+			<td><%= f.text_field :RG, :size => "30" %></td>
+		</tr>
+	</table>
+
+	<h2>&raquo; Address</h2>
+	<table style="width:100%">
+		<tr>
+			<td style="width:17%"><%= f.label :country_id %></td>
+			<td style="width:40%"><%= f.collection_select :country_id, Country.all, :id, :name %> </td>
+			<td><%= f.label :state_id %></td>
+			<td><%= f.text_field :state_id %></td>
+		</tr>
+		<tr>
+			<td><%= f.label :city %></td>
+			<td><%= f.text_field :city %></td>
+			<td><%= f.label :zip_code %></td>
+			<td><%= f.text_field :zip_code %></td>
+		</tr>
+		<tr>
+			<td><%= f.label :street_address1 %></td>
+			<td ><%= f.text_field :street_address1 %></td>
+			<td><%= f.label :street_address2%></td>
+			<td ><%= f.text_field :street_address2 %></td>
+		</tr>
+		<tr>
+			<td><%= f.label :street_number %></td>
+			<td><%= f.text_field :street_number %></td>
+			<td colspan="2"></td>
+		</tr>
+	</table>
+
+	<h2>&raquo; Telephone</h2>
+	<table style="width:100%">
+		<tr>
+			<td style="width:17%"><%= f.label :phone_country_id %></td>
+			<td style="width:40%"><%= f.text_field :phone_country_id %></td>
+			<td><%= f.label :phone_number %></td>
+			<td><%= f.text_field :phone_number %></td>
+		</tr>
+		<tr>
+			<td><%= f.label :mobile_country_id %></td>
+			<td><%= f.text_field :mobile_country_id %></td>
+			<td><%= f.label :mobile_number %></td>
+			<td><%= f.text_field :mobile_number %></td>
+		</tr>
+	</table>
+	<br/>
+	<div class="modulo botao">
+		<%= f.submit %>
+	</div>
+<% end %>

@@ -1,0 +1,38 @@
+             <div id="submenu" class="box">
+               <div id="title" class="title">Categories</div>
+				<ul>
+					<% @categories.each do |category| %>
+						<li><%= link_to category.title, "#{@shopping_path}/category/#{category.id}"%></li>
+					<%end%>
+				</ul>
+			</div><!--end submenu-->
+
+            <div id="container">
+                <h1>Shopping</h1>
+                <div id="divProdutos">
+                    <% count=1 %>
+                    <%@products.each do |product| %>
+                        <a href="javascript:;" class="boxZero cols2 <%=(count%2 == 0)?'lastColl':''%>">
+                            <span class="image left"><%= image_tag("/images/sessions/shopping/produto1.png")%></span>
+                            <h3><%=product.name%></h3>
+                            <p>
+                                <%=product.description%>
+                            </p>
+                            <div class="buy">
+                                <span class="left price">
+                                    <label class="br"> <%=product.point.currency.symbol%></label> <%=product.currency_value%>
+                                </span>
+
+                                <span class="left points"><%= product.points_value %> <label class="br"><%= product.point.name %></label></span>
+                                <%= image_tag("/images/sessions/shopping/bt_AddCart.gif", :class => "right cart", :onclick => 'window.location="/cart/add/' + product.id.to_s + '"')%>
+                            </div>
+
+                        </a>
+                    <%count +=1%>
+                    <%end%>
+
+                </div>
+            </div>
+
+
+

@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <%= stylesheet_link_tag :private_main %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+
+<body>
+	<%= render "shared/header"%>
+
+	<div id="main">
+		<div id="content">
+			<div id="submenu">
+				<img src="images/submenu/box_top.gif" />
+				<ul>
+					<li><a href="javascript:;" id="subShopping1">BR Points</a></li>
+					<li><a href="javascript:;" id="subShopping2">USD Points</a></li>
+					<li><a href="javascript:;" id="subShopping3">Euro Points</a></li>
+				</ul>
+				<img src="images/submenu/box_bot.gif" />
+			</div><!--end submenu-->
+			<div id="container">
+				<h1>my Shopping</h1>
+
+				<div class="box">
+					<form name="form1" id="form1">
+						<label>Inputs:</label><input type="text" name="txtTeste1" id="txtTeste1" />
+						<br />
+						<label>Selects:</label>
+						<select>
+							<option>Selecione a Opcao 2</option>
+							<option>Opcao 2</option>
+							<option>Opcao 3</option>
+						</select>
+						<br />
+						<a href="javascript:;">Estilo dos Links</a>
+					</form>
+				</div>
+
+				<div class="box">
+					<form name="form1" id="form1">
+						<label>Inputs:</label><input type="text" name="txtTeste1" id="txtTeste1" />
+						<br />
+						<label>Selects:</label>
+						<select>
+							<option>Selecione a Opcao 2</option>
+							<option>Opcao 2</option>
+							<option>Opcao 3</option>
+						</select>
+						<br />
+						<a href="javascript:;">Estilo dos Links</a>
+					</form>
+				</div>
+			</div><!-- container -->
+		</div><!--end content-->
+		<br class="clearFloat" />
+	</div><!--end main-->
+
+	<%= render "shared/footer"%>
+</body>
+</html>
+
+    

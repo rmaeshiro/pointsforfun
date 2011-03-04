@@ -1,0 +1,36 @@
+			<div id="submenu" class="box">
+				<ul>
+					<li><a href="/home">Home</a></li>
+					<li><a href="/users/sign_up">Sign Up</a></li>
+					<li><a href="/users/password/new" >Forgot your password?</a></li>
+				</ul>
+			</div><!--end submenu-->
+
+			<div id="container">
+				<div class="box">
+					<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+					<h1>Sign in</h1>
+							<table>
+								<tr>
+									<td><%= f.label :email %></td>
+									<td><%= f.text_field :email %></td>
+								</tr>
+								<tr>
+									<td><%= f.label :password %></td>
+									<td><%= f.password_field :password %></td>
+								</tr>
+							</table>
+							<br/>
+							<% if devise_mapping.rememberable? -%>
+								<%= f.check_box :remember_me %> <%= f.label :remember_me %>
+							<% end -%>
+							<br/>
+							<br/>
+							<%= f.submit "Sign in" %>
+							<div>
+						</div>
+					<% end %>
+				</div>
+			</div>
+
+

@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  date: 
+  currency_id: 
+  value: 9.99
+
+two:
+  date: 
+  currency_id: 
+  value: 9.99

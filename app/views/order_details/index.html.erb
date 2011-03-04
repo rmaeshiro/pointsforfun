@@ -1,0 +1,35 @@
+<h1>Listing order_details</h1>
+
+<table>
+  <tr>
+    <th>Order</th>
+    <th>Product</th>
+    <th>Point</th>
+    <th>Point value</th>
+    <th>Quantity</th>
+    <th>Currency value</th>
+    <th>Quotation</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @order_details.each do |order_detail| %>
+  <tr>
+    <td><%= order_detail.order_id %></td>
+    <td><%= order_detail.product_id %></td>
+    <td><%= order_detail.point_id %></td>
+    <td><%= order_detail.point_value %></td>
+    <td><%= order_detail.quantity %></td>
+    <td><%= order_detail.currency_value %></td>
+    <td><%= order_detail.quotation %></td>
+    <td><%= link_to 'Show', order_detail %></td>
+    <td><%= link_to 'Edit', edit_order_detail_path(order_detail) %></td>
+    <td><%= link_to 'Destroy', order_detail, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Order detail', new_order_detail_path %>

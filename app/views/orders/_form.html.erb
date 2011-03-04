@@ -1,0 +1,81 @@
+<%= form_for(@order) do |f| %>
+  <% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% @order.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.datetime_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :currency_value %><br />
+    <%= f.text_field :currency_value %>
+  </div>
+  <div class="field">
+    <%= f.label :order_status_id %><br />
+    <%= f.text_field :order_status_id %>
+  </div>
+  <div class="field">
+    <%= f.label :payment_type_id %><br />
+    <%= f.text_field :payment_type_id %>
+  </div>
+  <div class="field">
+    <%= f.label :payment_method_id %><br />
+    <%= f.text_field :payment_method_id %>
+  </div>
+  <div class="field">
+    <%= f.label :payment_date %><br />
+    <%= f.datetime_select :payment_date %>
+  </div>
+  <div class="field">
+    <%= f.label :cc_capturado %><br />
+    <%= f.text_field :cc_capturado %>
+  </div>
+  <div class="field">
+    <%= f.label :cc_numero_autorizado %><br />
+    <%= f.text_field :cc_numero_autorizado %>
+  </div>
+  <div class="field">
+    <%= f.label :cc_numero_transacao %><br />
+    <%= f.text_field :cc_numero_transacao %>
+  </div>
+  <div class="field">
+    <%= f.label :cc_numero_cv %><br />
+    <%= f.text_field :cc_numero_cv %>
+  </div>
+  <div class="field">
+    <%= f.label :cc_nacionalidade_emissor %><br />
+    <%= f.text_field :cc_nacionalidade_emissor %>
+  </div>
+  <div class="field">
+    <%= f.label :cc_codigo_retorno %><br />
+    <%= f.text_field :cc_codigo_retorno %>
+  </div>
+  <div class="field">
+    <%= f.label :boleto_nosso_numero %><br />
+    <%= f.text_field :boleto_nosso_numero %>
+  </div>
+  <div class="field">
+    <%= f.label :boleto_vencimento %><br />
+    <%= f.text_field :boleto_vencimento %>
+  </div>
+  <div class="field">
+    <%= f.label :gateway_transaction_id %><br />
+    <%= f.text_field :gateway_transaction_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

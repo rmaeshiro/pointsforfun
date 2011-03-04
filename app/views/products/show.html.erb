@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @product.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @product.description %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%= @product.image %>
+</p>
+
+<p>
+  <b>Points:</b>
+  <%= @product.point_id %>
+</p>
+
+<p>
+  <b>Points value:</b>
+  <%= @product.points_value %>
+</p>
+
+<p>
+  <b>Cuurency value:</b>
+  <%= @product.currency_value %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @product.category_id %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <%= @product.active %>
+</p>
+
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>

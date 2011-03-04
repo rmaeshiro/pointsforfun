@@ -1,0 +1,30 @@
+
+#loadingModal{
+	display: none;
+	position: absolute;
+	z-index: 5000;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	cursor: wait;
+	-moz-opacity: 0.65;
+	opacity: .65;
+	filter: alpha(opacity=65);
+}
+	#loadingModal[id]{ position: fixed; }
+
+#loading {
+	display: none;
+	position: absolute;
+	z-index: 5100;
+	/*background: url("../images/loading/bg.gif") no-repeat;
+	/*border: 1px solid #84a2c1;*/
+	width: 90px;
+	height: 44px;
+	padding-top: 12px;
+	text-align: center;
+	font-size: 13px;
+	margin: 0 auto;
+}

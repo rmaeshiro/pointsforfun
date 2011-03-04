@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  order_id: 1.5
+  product_id: 1
+  point_id: 1
+  point_value: 1
+  quantity: 1
+  currency_value: 9.99
+  quotation: 9.99
+
+two:
+  order_id: 1.5
+  product_id: 1
+  point_id: 1
+  point_value: 1
+  quantity: 1
+  currency_value: 9.99
+  quotation: 9.99

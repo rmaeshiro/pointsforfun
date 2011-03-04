@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <link href="/stylesheets/main.css?1298695859" media="screen" rel="stylesheet" type="text/css" />
+
+    <title></title>
+</head>
+<body>
+    <div id="content">
+        <div class="box">
+           <form action="/orders/request_payment_status" method="post">
+               <p>
+                   <label>UID Pedido:</label>
+                   <input type="text" name="uid_pedido" />
+               </p>
+               <p>
+                   <label>Codigo Pedido:</label>
+                   <input type="text" name="codigo_pedido" />
+               </p>
+               <p>
+                   <label>Status da Ordem</label>
+                   <select  name="codigo_status">
+                       <option value="1">New</option>
+                       <option value="2">Pending</option>
+                       <option value="3">Paid</option>
+                       <option value="4">Canceled</option>
+                       <option value="5">Expired</option>
+                   </select>
+               </p>
+               <p>
+                   <label>Data Status</label>
+                   <input type="text" name="data_status" />
+               </p>
+               <p>
+                   <label>Hora Status</label>
+                   <input type="text" name="hora_status" />
+               </p>
+
+               <div><b>Apenas se o status for Pending ou Paid</b></div>
+               <p>
+                   <label>Codigo Meio de Pagamento </label>
+                   <input type="text" name="codigo_pagamento" />
+               </p>
+               <p>
+                   <label>Forma de Pagamento</label>
+                   <input type="text" name="forma_pagamento" />
+               </p>
+               <p>
+                   <label>Valor Pagamento</label>
+                   <input type="text" name="valor_pagamento" />
+               </p>
+               <p>
+                   <label>Data Pagamento</label>
+                   <input type="text" name="data_pagamento" />
+               </p>
+               <p>
+                   <label>Hora Pagamento</label>
+                   <input type="text" name="hora_pagamento" />
+               </p>
+
+               <div><b>Apenas para cartoes de creditos</b></div>
+               <p>
+                   <label>Capturado</label>
+                   <input type="text" name="capturado" />
+               </p>
+               <p>
+                   <label>Numero de Autorizacao</label>
+                   <input type="text" name="numero_autorizacao" />
+               </p>
+               <p>
+                   <label>Numero de Transacao</label>
+                   <input type="text" name="numero_transacao" />
+               </p>
+               <p>
+                   <label>Numero CV</label>
+                   <input type="text" name="numero_cv" />
+               </p>
+               <p>
+                   <label>Nacionalidade do Emissor</label>
+                   <input type="text" name="nacionalidade_emissor" />
+               </p>
+               <p>
+                   <label>Codigo de Retorno</label>
+                   <input type="text" name="codigo_retorno" />
+               </p>
+               <div><b>Apenas para Boleto Bancario</b></div>
+               <p>
+                   <label>Nosso Numero</label>
+                   <input type="text" name="nosso_numero" />
+               </p>
+               <p>
+                   <label>Data de vencimento do boleto</label>
+                   <input type="text" name="vencimento_boleto" />
+               </p>
+               <div><b>Chave de autenticacao</b></div>
+               <p>
+                   <label>Nosso Numero</label>
+                   <input type="text" name="chave" />
+               </p>
+               <input type="submit" value="Update Order">
+           </form>
+        </div>
+    </div>
+</body>
+</html>

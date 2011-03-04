@@ -1,0 +1,29 @@
+	<div id="header">
+		<div class="container">
+			<div id="logo"><%=image_tag("header/logo.gif", :id => "imgLogo")%></div>
+            <%if user_signed_in?%>
+            <div id="boasVindas">
+                <%= image_tag "/images/header/boxUser_Left.gif"%><b>welcome</b> <%=current_user.email%><%= image_tag "/images/header/boxUser_Right.gif"%>
+            </div>
+
+
+            <div id="divLogout">
+                <%= link_to(image_tag("/images/menu/iconLogout.gif"),"/users/sign_out")%>
+            </div>
+            <%end%>
+			<div id="menu">
+				<ul>
+				<%if !user_signed_in?%>
+					<li><a id="menuShopping" href="/shopping">Shopping</a></li><li><a id="menu2" href="/users/sign_in">Login</a></li><li><a id="menu2" href="/users/sign_up">Sign Up</a></li>
+				<%else
+                    if !current_user.profile_id.nil?
+                %>
+					<li><a id="menuShopping" href="/shopping"><%= image_tag "/images/menu/txtShopping.gif"%></a></li><li><a id="menuOrders" href="/orders">my Orders</a></li><li><a id="menu2Cards" href="javascript:;">my Cards</a></li><li><a id="menuInfo" href="/profiles/<%=current_user.profile_id%>/edit">my Info</a></li><li><a id="menuCart" href="/cart"><%=image_tag("menu/iconCart.gif", :id => "imgLogo")%></a></li>
+                    <%else%>
+                      <li><a id="menuShopping" href="/shopping"><%= image_tag "/images/menu/txtShopping.gif"%></a></li>
+                    <%end%>
+				<%end%>
+				</ul>
+			</div>
+		</div>
+	</div><!--end header-->

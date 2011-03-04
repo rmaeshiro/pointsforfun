@@ -1,0 +1,37 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  date: 2011-02-24 15:25:51
+  user_id: 1
+  currency_value: 9.99
+  order_status_id: 1
+  payment_type_id: 1
+  paymnet_method_id: 1
+  payment_date: 2011-02-24 15:25:51
+  cc_capturado: MyString
+  cc_numero_autorizado: MyString
+  cc_numero_transacao: MyString
+  cc_numero_cv: MyString
+  cc_nacionalidade_emissor: MyString
+  cc_codigo_retorno: MyString
+  boleto_nosso_numero: MyString
+  boleto_vencimento: MyString
+  gateway_transaction_id: 1.5
+
+two:
+  date: 2011-02-24 15:25:51
+  user_id: 1
+  currency_value: 9.99
+  order_status_id: 1
+  payment_type_id: 1
+  paymnet_method_id: 1
+  payment_date: 2011-02-24 15:25:51
+  cc_capturado: MyString
+  cc_numero_autorizado: MyString
+  cc_numero_transacao: MyString
+  cc_numero_cv: MyString
+  cc_nacionalidade_emissor: MyString
+  cc_codigo_retorno: MyString
+  boleto_nosso_numero: MyString
+  boleto_vencimento: MyString
+  gateway_transaction_id: 1.5

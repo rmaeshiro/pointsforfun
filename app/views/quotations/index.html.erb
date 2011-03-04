@@ -1,0 +1,27 @@
+<h1>Listing quotations</h1>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Currency</th>
+    <th>Value</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @quotations.each do |quotation| %>
+  <tr>
+    <td><%= quotation.date %></td>
+    <td><%= quotation.currency_id %></td>
+    <td><%= quotation.value %></td>
+    <td><%= link_to 'Show', quotation %></td>
+    <td><%= link_to 'Edit', edit_quotation_path(quotation) %></td>
+    <td><%= link_to 'Destroy', quotation, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Quotation', new_quotation_path %>

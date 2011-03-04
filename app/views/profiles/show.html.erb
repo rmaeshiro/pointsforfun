@@ -1,0 +1,94 @@
+<div id='container'>
+    <div class="box">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>First name:</b>
+  <%= @profile.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%= @profile.last_name %>
+</p>
+
+<p>
+  <b>Sex:</b>
+  <%= @profile.sex_id %>
+</p>
+
+<p>
+  <b>Date of birth:</b>
+  <%= @profile.date_of_birth %>
+</p>
+
+<p>
+  <b>Cpf:</b>
+  <%= @profile.CPF %>
+</p>
+
+<p>
+  <b>Rg:</b>
+  <%= @profile.RG %>
+</p>
+
+<p>
+  <b>Street address1:</b>
+  <%= @profile.street_address1 %>
+</p>
+
+<p>
+  <b>Street address2:</b>
+  <%= @profile.street_address2 %>
+</p>
+
+<p>
+  <b>Street number:</b>
+  <%= @profile.street_number %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @profile.city %>
+</p>
+
+<p>
+  <b>Zip code:</b>
+  <%= @profile.zip_code %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @profile.state_id %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%= @profile.country_id %>
+</p>
+
+<p>
+  <b>Phone country:</b>
+  <%= @profile.phone_country_id %>
+</p>
+
+<p>
+  <b>Phone number:</b>
+  <%= @profile.phone_number %>
+</p>
+
+<p>
+  <b>Mobile country:</b>
+  <%= @profile.mobile_country_id %>
+</p>
+
+<p>
+  <b>Mobile number:</b>
+  <%= @profile.mobile_number %>
+</p>
+
+
+<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<%= link_to 'Back', profiles_path %>
+    </div>
+</div>

@@ -1,0 +1,84 @@
+
+#dialogModal {
+	display: none;
+	position: absolute;
+	z-index: 3000;
+	top: 0;
+	left: 0;
+	width: 100%;
+	min-height: 100%;
+	background-color: #000;
+	-moz-opacity: 0.80;
+	opacity: .80;
+	filter: alpha(opacity=80);
+}
+	#dialogModal[id]{ position: fixed; }
+
+
+
+#dialog {
+	display: none;
+	position: absolute;
+	z-index: 3100;
+	width: 350px;
+	height: 130px;
+	overflow: hidden;
+	top: 180px;
+	margin: 0 auto;
+	background: #fff url("images/dialog.gif");
+}
+
+#dialogTitle {
+	/*
+	text-align: left;
+	padding-left: 10px;
+	border-bottom: 2px solid #c4c6c9;
+	width: 340px;
+	*/
+}
+#dialogContainer {
+	width: 330px;
+	text-align: left;
+	padding: 15px 10px 0 12px;
+}
+#dialogIcon {
+	width: 50px;
+	height: 50px;
+	float: left;
+}
+#dialogMessage { 
+	width: 245px;
+	height: 45px;
+	margin-top: 8px;
+	float: right;
+	font-size: 14px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	color: #000;
+}
+	.msgInfo	 { color: #0a50b9; }
+	.msgAlert	 { color: #000000; }
+	.msgError	 { color: #9a0404; }
+	.msgQuestion { color: #033d94; }
+
+#dialogButton {
+	width: 100%;
+	text-align: center;
+	padding-left: 40px;
+	clear: both;
+	position: absolute;
+	bottom: 5px;
+}
+
+
+.btnSplash {
+	width: 56px;
+	height: 25px;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+	margin-right: 5px;
+}
+#btnOk	{ background: url("images/btn_ok.gif"); }
+#btnSim	{ background: url("images/btn_sim.gif"); }
+#btnNao	{ background: url("images/btn_nao.gif"); }

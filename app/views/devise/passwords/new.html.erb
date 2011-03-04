@@ -1,0 +1,23 @@
+			<div id="submenu" class="box">
+				<ul>
+					<li><a href="/home">Home</a></li>
+					<li><a href="/users/sign_in">Sign In</a></li>
+					<li><a href="/users/sign_up">Sign Up</a></li>
+				</ul>
+			</div><!--end submenu-->
+			<div id="container">
+				<div class="box">
+					<h1>Forgot your password?</h1>
+					<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+					<%= devise_error_messages! %>
+					<table>
+						<tr>
+							<td><%= f.label :email %></td>
+							<td><%= f.text_field :email %></td>
+						</tr>
+					</table>
+					<%= f.submit "Send me reset password instructions" %>
+					<% end %>
+				</div>
+			</div>
+

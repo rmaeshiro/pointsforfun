@@ -1,0 +1,48 @@
+<div id="container">
+	<div class="box">
+        <table style="width:100%">
+            <thead>
+                <th>Name</th>
+                <th style="text-align:right">Points</th>
+                <th style="text-align:right">Value</th>
+                <th>Quantity</th>
+                <th style="text-align:right">Total</th>
+                <th></th>
+            </thead>
+            <tbody>
+            <%@cart.each do |items| %>
+                <tr>
+                    <td><%=items.product.name%></td>
+                    <td style="text-align:right"><%=items.product.points_value%></td>
+                    <td style="text-align:right"><%=items.product.currency_value%></td>
+                    <td style="text-align:center"><%=items.quantity%></td>
+                    <td style="text-align:right"><%=items.product.currency_value * items.quantity %></td>
+                </tr>
+            <%end%>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td style="text-align:center">Points</td>
+                    <td style="text-align:center">Currency</td>
+                    <td>Quotation</td>
+                    <td style="text-align:right">Total R$</td>
+                </tr>
+                <%@totals[:items].each do |item|%>
+                <tr>
+                    <td></td>
+                    <td style="text-align:right"><%=item[1][:pointName]%> : <%=item[1][:subTotalPoints]%></td>
+                    <td style="text-align:right"><%=item[1][:currencyName]%> : <%=item[1][:subTotalPoints]%></td>
+                    <td style="text-align:center"><%=item[1][:quotation]%></td>
+                    <td style="text-align:right"><%=item[1][:subtotalReal]%> </td>
+                </tr>
+                <%end%>
+                <tr><td colspan="5" style="text-align:right"><%=@totals[:geral]%></td></tr>
+            </tfoot>
+        </table>
+		<h2>Selecione uma forma de pagamento</h2>
+		<iframe src="/cart/checkout_payment" style="width:100%;height:500px;border:0px"></iframe>
+	</div>
+
+</div>
+

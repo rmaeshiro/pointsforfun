@@ -1,0 +1,109 @@
+/*
+ * CSS Document by EverSystems
+ */
+
+
+
+/* ---------- SHOPPING ---------- */
+
+#divProdutos {
+	margin: 0;
+	padding: 0;
+}
+
+	#divProdutos .cols2 {
+		display: inline-block;
+		width: 328px;
+		height: 125px;
+		padding: 15px 15px 7px;
+		margin: 0 15px 15px 0 !important;
+	}
+	
+	#divProdutos .lastColl {
+		margin: 0 !important;
+	}
+	
+	
+	#divProdutos a {
+		color: #999;
+		/*margin: 10px;*/
+		border-bottom: 1px solid #d5d5d5;
+		text-decoration: none;
+		vertical-align: top;
+		overflow: hidden;
+	}
+		
+		#divProdutos a:link, #divProdutos a:visited {
+			background: #fff url("../images/sessions/shopping/box_bg.gif") repeat-x 0 0;
+		}
+		
+		#divProdutos a:hover, #divProdutos a:active {
+			background: #f5f5f5 url("../images/sessions/shopping/box_bg.gif") repeat-x 0 -152px;
+		}
+		
+		
+		#divProdutos a .left {
+			float: left;
+		}
+		#divProdutos a .right {
+			float: right;
+		}
+		
+		
+		#divProdutos a .image {
+			width: 100px;
+			height: 88px;
+			margin: 0;
+			padding: 0;
+			margin-right: 20px;
+			overflow: hidden;
+		}
+		
+		#divProdutos a h3 {
+			margin: 0;
+			padding: 0;
+			font-size: 14px;
+			color: #000;
+		}
+		#divProdutos a p {
+			height: 70px;
+			margin: 5px 0 8px;
+			color: #777;
+			overflow: hidden;
+		}
+		#divProdutos a hr {
+			height: 2px;
+			border: none;
+			border-top: 1px solid #dadada;
+			border-bottom: 1px solid #fff;
+		}
+		
+		
+		#divProdutos a .buy {
+			margin: 0;
+			color: #000;
+		}
+			#divProdutos a .buy .price {
+				width: 100px;
+				margin-right: 20px;
+				padding-top: 5px;
+				font-weight: bold;
+				overflow: hidden;
+			}
+			#divProdutos a .buy .points {
+				width: 135px;
+				color: #000;
+				padding-top: 5px;
+				font-weight: bold;
+				overflow: hidden;
+			}
+			#divProdutos a .buy .cart {
+				float: right;
+				padding-top: 2px;
+			}
+		
+		
+		#divProdutos a .br { color: #45bc37; }
+		#divProdutos a .usd { color: #469a3c; }
+		#divProdutos a .euro { color: #469a3c; }
+

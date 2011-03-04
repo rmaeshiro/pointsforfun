@@ -1,0 +1,15 @@
+class HomeController < ApplicationController
+	skip_before_filter :authenticate_user!
+  before_filter :verify_profile_complete
+	def index
+		if user_signed_in?
+			#verify if profile is complete
+			if !current_user.profile_id
+				redirect_to  new_profile_path
+			else
+				redirect_to  :controller => "shopping"
+			end
+    end
+	end
+
+end

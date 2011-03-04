@@ -1,0 +1,32 @@
+<div id="containerFull">
+	<div class="box">
+        <h1>My Orders</h1>
+        <table class="tableGrid">
+          <tr>
+            <th>Order ID</th>
+            <th>Date</th>
+            <th>Currency value</th>
+            <th>Payment type</th>
+            <th>Order status</th>
+            <th></th>
+            <th class="lastColl"></th>
+          </tr>
+
+        <%@orders.each do |order| %>
+          <tr class="<%= cycle("lineOn", "lineOff") %>">
+            <td class="alignCenter"><%= order.id %></td>
+            <td class="alignCenter"><%= order.date %></td>
+            <td class="alignRight"><%= order.currency_value %></td>
+            <% order_payment = (order.payment_type_id.nil?)?'' : order.payment_type.name + " - " + order.payment_type.institution%>
+            <td class="alignCenter"><%=order_payment%></td>
+            <td class="alignCenter"><%= order.order_status.description %></td>
+            <td><%= link_to 'Details', "/orders/show/#{order.id}" %></td>
+            <!--td><%#= link_to 'Edit', edit_order_path(order) %></td-->
+            <td><%= link_to 'Destroy', "/orders/destroy/#{order.id}", :confirm => 'Are you sure?', :method => :delete %></td>
+          </tr>
+        <%end %>
+        </table>
+     </div>
+</div>
+
+<br />

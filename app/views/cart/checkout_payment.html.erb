@@ -1,0 +1,28 @@
+<%require 'digest/md5'%>
+<%
+cod_estabelecimento = "105918"
+cod_seguranca = "u2m6d7s5"
+acao = "1"
+valor_total = "1000"
+cod_segurancaMD5 = Digest::MD5.hexdigest(cod_seguranca)
+
+chave = Digest::MD5.hexdigest(cod_estabelecimento + cod_segurancaMD5 + acao +valor_total)
+%>
+<script>
+    window.onload = function(){document.form1.submit()}
+</script>
+
+<form name="form1" action="https://ww3.ipagare.com.br/service/process.do" method="POST">
+<input type="hidden" name="teste" value="1">
+
+<input type="hidden" name="estabelecimento" value="<%=cod_estabelecimento%>">
+
+<input type="hidden" name="acao" value="<%=acao%>">
+
+<input type="hidden" name="valor_total" value="<%=valor_total%>">
+
+<input type="hidden" name="chave" value="<%=chave%>">
+
+</form>
+
+

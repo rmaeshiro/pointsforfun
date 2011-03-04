@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  code: 1
+  iso_code2: MyString
+  iso_code3: MyString
+  name: MyString
+
+two:
+  code: 1
+  iso_code2: MyString
+  iso_code3: MyString
+  name: MyString

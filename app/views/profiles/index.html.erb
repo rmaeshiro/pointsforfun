@@ -1,0 +1,59 @@
+<%if current_user.admin == true%>
+<h1>Listing profiles</h1>
+
+<table>
+  <tr>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Sex</th>
+    <th>Date of birth</th>
+    <th>Cpf</th>
+    <th>Rg</th>
+    <th>Street address1</th>
+    <th>Street address2</th>
+    <th>Street number</th>
+    <th>City</th>
+    <th>Zip code</th>
+    <th>State</th>
+    <th>Country</th>
+    <th>Phone country</th>
+    <th>Phone number</th>
+    <th>Mobile country</th>
+    <th>Mobile number</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @profiles.each do |profile| %>
+  <tr>
+    <td><%= profile.first_name %></td>
+    <td><%= profile.last_name %></td>
+    <td><%= profile.sex_id %></td>
+    <td><%= profile.date_of_birth %></td>
+    <td><%= profile.CPF %></td>
+    <td><%= profile.RG %></td>
+    <td><%= profile.street_address1 %></td>
+    <td><%= profile.street_address2 %></td>
+    <td><%= profile.street_number %></td>
+    <td><%= profile.city %></td>
+    <td><%= profile.zip_code %></td>
+    <td><%= profile.state_id %></td>
+    <td><%= profile.country_id %></td>
+    <td><%= profile.phone_country_id %></td>
+    <td><%= profile.phone_number %></td>
+    <td><%= profile.mobile_country_id %></td>
+    <td><%= profile.mobile_number %></td>
+    <td><%= link_to 'Show', profile %></td>
+    <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
+    <td><%= link_to 'Destroy', profile, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Profile', new_profile_path %>
+<%else%>
+    <h1>Permissao Negada</h1>
+<%end%>

@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+<div id="container">
+
+	<div class="box">
+        <h1> Order ID: <%= @order.id %></h1>
+        <p>
+          <b>Order Date:</b>
+          <%= @order.date %>
+        </p>
+        <p>
+          <b>Order status:</b>
+          <%= @order.order_status.description %>
+        </p>
+
+        <table class="tableGrid">
+          <thead>
+            <th class="alignLeft">Description</th>
+            <th class="alignLeft">Points</th>
+            <th>Quantity</th>
+            <th class="alignRight">Price</th>
+            <th class="alignRight">Quotation</th>
+            <th class="alignRight lastColl">Total</th>
+          </thead>
+          <tbody>
+          <% total = 0
+             count=0
+             @order_details.each do |item| %>
+            <tr class="<%= (count%2==0)?:lineOn : :lineOff%>">
+                <td class="alignLeft" ><%=item.product.name%></td>
+                <td class="alignLeft"><%=item.point.name%> - <%=item.point_value%></td>
+                <td class="alignCenter"><%=item.quantity%></td>
+                <td class="alignRight"><%=item.currency_value%></td>
+                <td class="alignRight"><%=item.quotation%></td>
+                <td class="alignRight"><%=item.currency_value * item.quantity * item.quotation %></td>
+            </tr>
+          <% total +=  (item.currency_value * item.quantity * item.quotation)
+             count +=1
+             end%>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="5" style="text-align:right"><b>Total</b></td>
+              <td style="text-align:right"><b><%= total%></b></td>
+            </tr>
+          </tfoot>
+        </table>
+    <p style="text-align:center"><b>Select a payment method</b></p>
+    <%if @order.order_status.id > 1 %>
+        <div>Todo</div>
+    <%else%>
+        <iframe src="/orders/payment" style="width:100%;height:500px;border:0px"></iframe>
+    <%end%>
+    </div>
+</div>
+
